@@ -2,21 +2,25 @@ import React from 'react';
 import Constants from 'expo-constants';
 import { Feather as Icon } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { View, StyleSheet, TouchableOpacity, Text , ScrollView} from 'react-native';
+import { View, StyleSheet, Image , TouchableOpacity, Text , ScrollView} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 import { SvgUri } from 'react-native-svg';
 
 const Points = () => {
   const navigation = useNavigation();
 
-  function handleNavifateBack(){
+  function handleNavigateBack(){
     navigation.goBack();
+  }
+
+  function handleNavigateToDetail(){
+    navigation.navigate('Detail')
   }
 
   return (
     <>
       <View style={styles.container}>
-        <TouchableOpacity onPress={handleNavifateBack}>
+        <TouchableOpacity onPress={handleNavigateBack}>
           <Icon name="arrow-left" size={20} color="#34cb79" />
         </TouchableOpacity>
         <Text style={styles.title}>Bem vindo!</Text>
@@ -32,11 +36,18 @@ const Points = () => {
               longitudeDelta: 0.014,
             }}
           >
-            <Marker coordinate={{ 
-              latitude: -2.5493668, 
-              longitude: -44.194284,
-             }} />
-
+            <Marker 
+              style={styles.mapMarker} 
+              onPress={handleNavigateToDetail}
+              coordinate={{ 
+                latitude: -2.5493668, 
+                longitude: -44.194284,
+             }} >
+              <View style={styles.mapMarkerContainer}> 
+                <Image style={styles.mapMarkerImage} source={{ uri:'https://images.unsplash.com/flagged/photo-1576045771676-7ac070c1ce72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80'}}/>   
+                <Text style={styles.mapMarkerTitle}>EcoPonto</Text>              
+              </View>  
+            </Marker>  
           </MapView>
         </View>
       </View>
