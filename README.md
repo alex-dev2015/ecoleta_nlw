@@ -9,7 +9,8 @@
 
 ## About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+Project developed on the next level wiki.
+A web and mobile application related to waste collection.
 
 ## Getting Started <a name = "getting_started"></a>
 
@@ -20,27 +21,44 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them.
 
 ```
-Give examples
+$ git clone https://github.com/alex-dev2015/ecoleta_nlw.git
 ```
 
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running.
 
-Say what the step will be
 
 ```
-Give the example
+$ cd ecoleta_nlw\server
+
 ```
 
 And repeat
 
 ```
-until finished
+$ npm install
 ```
 
-End with an example of getting some data out of the system or using it for a little demo.
+```
+$ cd.. cd web
+```
+
+```
+$ npm install
+```
+```
+$ cd.. cd mobile
+```
+
+```
+$ npm install
+```
+
 
 ## Usage <a name = "usage"></a>
 
-Add notes about how to use the system.
+Run the backend server
+```
+cd 
+```
